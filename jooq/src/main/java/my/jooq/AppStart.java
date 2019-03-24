@@ -15,9 +15,9 @@ public class AppStart {
 
     public static void main(String... args) {
 
-        String username = getProperty("jdbc.user", "jdbc:mysql://localhost:3306/jooqdb");
-        String password = getProperty("jdbc.pass", "root");
-        String url = getProperty("jdbc.url", "password");
+        String username = getProperty("jdbc.user", "root");
+        String password = getProperty("jdbc.pass", "password");
+        String url = getProperty("jdbc.url", "jdbc:mysql://localhost:3306/jooqdb");
 
         try (Connection con = DriverManager.getConnection(url, username, password)) {
             DSLContext context = DSL.using(url, username, password);
